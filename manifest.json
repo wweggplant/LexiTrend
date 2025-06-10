@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "TrendLens Dev",
+  "version": "1.0.0",
+  "description": "快速捕捉并解析 Google Trends 热词的智能助手",
+  
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "activeTab"
+  ],
+  
+  "host_permissions": [
+    "https://trends.google.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://trends.google.com/*"],
+      "js": ["src/content-scripts/google-trends.js"],
+      "css": ["src/styles/content-script.css"]
+    }
+  ],
+  
+  "side_panel": {
+    "default_path": "src/side-panel/index.html"
+  },
+  
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "TrendLens Dev"
+  },
+  
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["src/styles/*.css"],
+      "matches": ["https://trends.google.com/*"]
+    }
+  ]
+} 
