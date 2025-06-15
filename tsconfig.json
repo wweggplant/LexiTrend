@@ -5,6 +5,8 @@
     "target": "ES6",
     "skipLibCheck": true,
     "strict": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -13,7 +15,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "types": ["chrome"],
+    "types": ["chrome", "jest"],
     "paths": {
       "@/*": ["./src/*"]
     }

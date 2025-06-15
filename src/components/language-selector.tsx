@@ -2,29 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { Check } from "lucide-react"
-import { Button } from "@/src/components/ui/button"
-import { Label } from "@/src/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select"
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { EXTENDED_LANGUAGES } from "../constants/languages"
 
 interface LanguageSelectorProps {
   onSave?: () => void
 }
-
-interface Language {
-  value: string
-  label: string
-}
-
-const LANGUAGES: Language[] = [
-  { value: "en", label: "English" },
-  { value: "zh", label: "中文" },
-  { value: "ja", label: "日本語" },
-  { value: "es", label: "Español" },
-  { value: "fr", label: "Français" },
-  { value: "de", label: "Deutsch" },
-  { value: "ko", label: "한국어" },
-  { value: "pt", label: "Português" },
-]
 
 export default function LanguageSelector({ onSave }: LanguageSelectorProps) {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("")
@@ -79,7 +64,7 @@ export default function LanguageSelector({ onSave }: LanguageSelectorProps) {
     }
   }
 
-  const selectedLanguageLabel = LANGUAGES.find((lang) => lang.value === selectedLanguage)?.label || ""
+  const selectedLanguageLabel = EXTENDED_LANGUAGES.find((lang) => lang.value === selectedLanguage)?.label || ""
 
   return (
     <div className="w-full max-w-md mx-auto space-y-6">
@@ -99,7 +84,7 @@ export default function LanguageSelector({ onSave }: LanguageSelectorProps) {
               <SelectValue placeholder="选择语言 / Select Language" />
             </SelectTrigger>
             <SelectContent>
-              {LANGUAGES.map((language) => (
+              {EXTENDED_LANGUAGES.map((language) => (
                 <SelectItem key={language.value} value={language.value}>
                   <div className="flex items-center gap-2">
                     <span>{language.label}</span>

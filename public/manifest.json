@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "TrendLens Dev",
+  "name": "LexiTrend",
   "version": "1.0.0",
   "description": "快速捕捉并解析 Google Trends 热词的智能助手",
   
   "permissions": [
     "storage",
     "sidePanel",
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
   
   "host_permissions": [
@@ -16,35 +17,33 @@
   ],
   
   "background": {
-    "service_worker": "src/background/service-worker.js"
+    "service_worker": "src/background.ts",
+    "type": "module"
   },
   
   "content_scripts": [
     {
       "matches": ["https://trends.google.com/*"],
-      "js": ["src/content-scripts/google-trends.js"],
+      "js": ["src/content-script.ts"],
       "css": ["src/styles/content-script.css"]
     }
   ],
   
   "side_panel": {
-    "default_path": "src/side-panel/index.html"
+    "default_path": "sidepanel.html"
   },
   
   "action": {
-    "default_popup": "src/popup/index.html",
-    "default_title": "TrendLens Dev"
-  },
-  
-  "icons": {
-    "16": "public/icons/icon-16.png",
-    "48": "public/icons/icon-48.png",
-    "128": "public/icons/icon-128.png"
+    "default_popup": "popup.html",
+    "default_title": "LexiTrend"
   },
   
   "web_accessible_resources": [
     {
-      "resources": ["src/styles/*.css"],
+      "resources": [
+        "src/styles/content-script.css",
+        "assets/*"
+      ],
       "matches": ["https://trends.google.com/*"]
     }
   ]

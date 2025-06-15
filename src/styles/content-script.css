@@ -1,0 +1,18 @@
+/* LexiTrend Content Script Styles */
+
+#lexitrend-test {
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  padding: 8px 12px !important;
+  background: #4CAF50 !important;
+  color: white !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  z-index: 10000 !important;
+  font-family: Arial, sans-serif !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  border: none !important;
+  margin: 0 !important;
+} 

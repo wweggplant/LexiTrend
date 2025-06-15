@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { CheckCircle, XCircle, X } from "lucide-react"
-import { Button } from "@/src/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 interface ToastNotificationProps {
   message: string

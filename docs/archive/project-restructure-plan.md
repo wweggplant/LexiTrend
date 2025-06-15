@@ -50,7 +50,7 @@ TrendLens/
 │   ├── icons/                  # 扩展图标
 │   │   ├── icon-16.png
 │   │   ├── icon-48.png
-│   │   └── icon-128.png
+│   │   └── web-app-manifest-192x192.png
 │   └── tutorial.gif           # Onboarding教程
 └── dist/                      # 构建输出 (Vite生成)
 ```
